@@ -9,5 +9,3 @@ const blabla: TotoDomain = {
 }
 
 console.log(blabla)
-
-export {};

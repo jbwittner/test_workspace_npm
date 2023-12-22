@@ -5,6 +5,12 @@
         "packages/infra"
     ],
     "scripts": {
-        "build": "tsc --build --verbose"
-      }
+        "build": "tsc --build --verbose",
+        "clean": "npm run clean:domain && npm run clean:infra",
+        "clean:domain": "rimraf packages/domain/tsconfig.tsbuildinfo && rimraf packages/domain/dist",
+        "clean:infra": "rimraf packages/infra/tsconfig.tsbuildinfo && rimraf packages/infra/dist"
+    },
+    "devDependencies": {
+        "rimraf": "^5.0.5"
+    }
 }
