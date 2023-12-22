@@ -1,5 +1,5 @@
 {
-  "name": "infra",
+  "name": "@monorepo/infra",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@monorepo/domain": "^1.0.0"
+  },
   "devDependencies": {
     "typescript": "^5.3.3"
   }

@@ -1,4 +1,4 @@
-interface TotoDomain {
+export interface TotoDomain {
     one: string,
     two: string
 }
@@ -9,3 +9,7 @@ const blabla: TotoDomain = {
 }
 
 console.log(blabla)
+
+export function isEven(n: number): boolean {
+    return n % 2 === 0
+  }

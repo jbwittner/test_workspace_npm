@@ -1,3 +1,5 @@
+import { TotoDomain } from "@monorepo/domain";
+
 interface TotoInfra {
     one: string,
     two: string
@@ -8,6 +10,9 @@ const bla: TotoInfra = {
     two: "b"
 }
 
-console.log(bla.one)
+const test3: TotoDomain = {
+    one: "gbb",
+    two: "aaa"
+}
 
-export {};
+console.log(bla.one)
