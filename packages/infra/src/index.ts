@@ -16,3 +16,4 @@ const test3: TotoDomain = {
 }
 
 console.log(bla.one)
+console.log(test3)

@@ -6,6 +6,7 @@
     ],
     "scripts": {
         "build": "tsc --build --verbose",
+        "start": "node packages/infra/dist/index.js",
         "clean": "npm run clean:domain && npm run clean:infra",
         "clean:domain": "rimraf packages/domain/tsconfig.tsbuildinfo && rimraf packages/domain/dist",
         "clean:infra": "rimraf packages/infra/tsconfig.tsbuildinfo && rimraf packages/infra/dist"
