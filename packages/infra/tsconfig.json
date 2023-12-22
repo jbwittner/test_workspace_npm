@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
     "composite": true,
-    "rootDir": "./src",
-    "outDir": "./build"
   }
 }
