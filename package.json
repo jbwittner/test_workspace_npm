@@ -1,0 +1,10 @@
+{
+    "name": "my-workspaces-powered-project",
+    "workspaces": [
+        "packages/domain",
+        "packages/infra"
+    ],
+    "scripts": {
+        "build": "tsc --build --verbose"
+      }
+}
