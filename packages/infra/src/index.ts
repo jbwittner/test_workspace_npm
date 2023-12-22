@@ -8,4 +8,6 @@ const bla: TotoInfra = {
     two: "b"
 }
 
-console.log(bla)
+console.log(bla.one)
+
+export {};
