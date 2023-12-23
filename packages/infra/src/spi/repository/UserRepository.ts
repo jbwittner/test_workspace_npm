@@ -1,1 +1,0 @@
-import {UserSpi} from '@monorepo/domain'
