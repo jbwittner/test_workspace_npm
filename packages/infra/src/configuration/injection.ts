@@ -7,7 +7,9 @@ import { UserInfraService } from "../service/UserInfraService";
 
 export const inject = () => {
     const appLogger: AppLogger = new LoggerImpl()
+    
     const userSpi: UserSpi = new UserSpiImpl()
+
     const userApi: UserApi = new UserDomainService(userSpi)
 
     const userInfraService: UserInfraService = new UserInfraService(appLogger, userApi)
