@@ -4,14 +4,14 @@
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
   "scripts": {
-    "build": "tsc --build"
+    "clean" : "rimraf tsconfig.tsbuildinfo && rimraf dist"
   },
   "author": "",
   "license": "ISC",
   
   "devDependencies": {
+    "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   }
 }

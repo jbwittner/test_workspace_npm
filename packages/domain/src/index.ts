@@ -3,6 +3,10 @@ export interface TotoDomain {
     two: string
 }
 
+export interface TestInterface {
+    test1: number
+}
+
 const blabla: TotoDomain = {
     one: "a",
     two: "b"
