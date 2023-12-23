@@ -1,19 +1,4 @@
-export interface TotoDomain {
-    one: string,
-    two: string
-}
-
-export interface TestInterface {
-    test1: number
-}
-
-const blabla: TotoDomain = {
-    one: "a",
-    two: "b"
-}
-
-console.log(blabla)
-
-export function isEven(n: number): boolean {
-    return n % 2 === 0
-  }
+export * from './api';
+export * from './model';
+export * from './service';
+export * from './spi';

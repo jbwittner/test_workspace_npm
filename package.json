@@ -8,8 +8,5 @@
         "build": "tsc --build --verbose",
         "start": "node packages/infra/dist/index.js",
         "clean": "npm run clean --workspaces"
-    },
-    "devDependencies": {
-        "rimraf": "^5.0.5"
     }
 }
