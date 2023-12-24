@@ -1,7 +1,7 @@
 {
   "files": [],
   "references": [
-    { "path": "packages/domain" },
-    { "path": "packages/infra" },
+    { "path": "domain" },
+    { "path": "infra" },
   ]
 }

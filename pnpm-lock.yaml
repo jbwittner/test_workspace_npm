@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      infra:
+        specifier: ^1.0.3
+        version: 1.0.3
 
   domain:
     dependencies:
@@ -45,6 +49,9 @@ importers:
       '@types/express':
         specifier: ^4.17.21
         version: 4.17.21
+      '@types/express-serve-static-core':
+        specifier: ^4.17.41
+        version: 4.17.41
       '@types/jest':
         specifier: ^29.5.11
         version: 29.5.11
@@ -1634,6 +1641,10 @@ packages:
       once: 1.4.0
       wrappy: 1.0.2
     dev: true
+
+  /infra@1.0.3:
+    resolution: {integrity: sha512-CrIHexE2OoefZ+cI9RFOyKAmk8YfZtLg532TLoLA7oXJ3fX6uwz3+YvanG+tXPoh8mmGViOwbirM9uqj3LzLUw==}
+    dev: false
 
   /inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}

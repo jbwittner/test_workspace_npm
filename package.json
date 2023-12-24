@@ -5,8 +5,11 @@
         "packages/infra"
     ],
     "scripts": {
-        "build": "tsc --build --verbose",
+        "build": "pnpm --stream -r run build",
         "start": "node packages/infra/dist/index.js",
         "clean": "npm run clean --workspaces"
+    },
+    "dependencies": {
+        "infra": "^1.0.3"
     }
 }
