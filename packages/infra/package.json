@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist"
+    "clean": "rimraf tsconfig.tsbuildinfo && rimraf build"
   },
   "author": "",
   "license": "ISC",
