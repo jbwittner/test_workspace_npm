@@ -7,7 +7,7 @@
     "scripts": {
         "build": "pnpm --stream -r run build",
         "start": "node packages/infra/dist/index.js",
-        "clean": "npm run clean --workspaces"
+        "clean": "pnpm --stream -r run clean"
     },
     "dependencies": {
         "infra": "^1.0.3"
