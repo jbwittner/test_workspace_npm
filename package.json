@@ -6,7 +6,7 @@
     ],
     "scripts": {
         "build": "pnpm --stream -r run build",
-        "start": "node packages/infra/dist/index.js",
+        "start": "node infra/build/index.js",
         "clean": "pnpm --stream -r run clean"
     },
     "dependencies": {
