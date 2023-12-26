@@ -11,8 +11,8 @@ export const initControllerAndInject = (appLogger: AppLogger, userInfraService: 
     UserController(appLogger, userInfraService)
 }
 
-export const startExpressServer = async (port: number) => {
-    await new Promise((resolve) => {
-        app.listen(port, () => resolve(app))
-    });
+export const startExpressServer = (port: number, appLogger: AppLogger) => {
+    app.listen(port, () => {
+        appLogger.info(`Server running on ${port}`)
+    })
 }

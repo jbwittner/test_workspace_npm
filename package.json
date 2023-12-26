@@ -1,13 +1,10 @@
 {
     "name": "my-workspaces-powered-project",
-    "workspaces": [
-        "packages/domain",
-        "packages/infra"
-    ],
     "scripts": {
         "build": "pnpm --stream -r run build",
         "start": "node infra/build/index.js",
-        "clean": "pnpm --stream -r run clean"
+        "clean": "pnpm --stream -r run clean",
+        "test": "pnpm --stream -r run test"
     },
     "dependencies": {
         "infra": "^1.0.3"
