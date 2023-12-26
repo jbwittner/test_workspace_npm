@@ -2,7 +2,7 @@ import { UserDomainService, UserSpi } from '../../src'
 
 describe('Test createUser method', () => {
   let userDomainService: UserDomainService
-  let userSpi: jest.Mocked<UserSpi> = {
+  const userSpi: jest.Mocked<UserSpi> = {
     save: jest.fn(),
     findUser: jest.fn()
   }

@@ -1,9 +1,17 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true
+    node: true,
+    es2020: true
   },
-  extends: ['eslint:recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  'plugins': [
+    '@typescript-eslint',
+    'jest'
+  ],
+  parser: '@typescript-eslint/parser',
   overrides: [
     {
       env: {
@@ -16,9 +24,13 @@ module.exports = {
     }
   ],
   parserOptions: {
-    project: './tsconfig.base.json',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  rules: {}
+  rules: {},
+  "ignorePatterns": [
+    "jest.config.js",
+    "dist",
+    "node_modules"
+  ],
 }
