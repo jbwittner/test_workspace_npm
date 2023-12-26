@@ -1,7 +1,7 @@
 import { AppLogger } from "@monorepo/domain"
-import { app } from "../configuration/expressConf"
 import { Request, Response } from "express";
 import { UserInfraService } from "../service/UserInfraService";
+import { app } from "../configuration/expressConf";
 
 interface UserRequest {
     username: string;
@@ -13,10 +13,12 @@ export const UserController = (appLogger: AppLogger, userInfraService: UserInfra
         const { username } = req.body as UserRequest;
 
         if (typeof username !== 'string') {
-            return res.status(400).send('Username must be a string');
+            res.status(400).send('Username must be a string');
+        } else {
+            const user = userInfraService.createUser(username)
+            res.status(201).send(user);
         }
-        const user = userInfraService.createUser(username)
-        res.status(201).send(user);
+
     })
 
     app.get('/user/:userId', (req: Request, res: Response) => {

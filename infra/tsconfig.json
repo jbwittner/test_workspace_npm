@@ -1,13 +1,26 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "build",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "composite": true,
+    "allowJs": false,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@monorepo/domain": ["../domain/build"]
+      "@monorepo/domain": ["../domain/src/index.ts"]
     }
+
   },
-  "include": [
-    "src/**/*"
-  ]
+  "references": [
+    {
+      "path": "../domain"
+    }
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
