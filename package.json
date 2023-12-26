@@ -6,7 +6,5 @@
         "clean": "pnpm --stream -r run clean",
         "test": "pnpm --stream -r run test"
     },
-    "dependencies": {
-        "infra": "^1.0.3"
-    }
+    "workspaces": [ "domain", "infra" ]
 }
