@@ -1,5 +1,4 @@
 {
-  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "./dist",
@@ -10,8 +9,12 @@
     "allowJs": false,
     "declaration": true,
     "declarationMap": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@test-lib": ["test-lib"],
+      "@domain": ["src"]
+    }
   },
-  "include": ["src/**/*", "test/**/*"],
+  "include": ["src/**/*", "test-lib/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
 }

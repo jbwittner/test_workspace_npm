@@ -1,4 +1,4 @@
-import { User, UserDomainService, UserSpi } from '../../src'
+import { User, UserDomainService, UserSpi } from '@domain'
 import { v4 as uuidv4 } from 'uuid'
 
 describe('Test getUser method', () => {

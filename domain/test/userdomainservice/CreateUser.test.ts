@@ -1,6 +1,9 @@
 import { UserDomainService, UserSpi } from '../../src'
+import { DomainFaker } from '@test-lib'
+import { faker } from '@faker-js/faker'
 
 describe('Test createUser method', () => {
+  DomainFaker(faker)
   let userDomainService: UserDomainService
   const userSpi: jest.Mocked<UserSpi> = {
     save: jest.fn(),

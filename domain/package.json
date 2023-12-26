@@ -6,8 +6,8 @@
   "types": "build/src/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "clean": "rimraf tsconfig.tsbuildinfo && rimraf build",
-    "test": "ts-jest"
+    "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
