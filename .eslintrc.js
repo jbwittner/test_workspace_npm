@@ -3,14 +3,8 @@ module.exports = {
     node: true,
     es2020: true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended'
-  ],
-  'plugins': [
-    '@typescript-eslint',
-    'jest'
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+  plugins: ['@typescript-eslint', 'jest'],
   parser: '@typescript-eslint/parser',
   overrides: [
     {
@@ -25,12 +19,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  rules: {},
-  "ignorePatterns": [
-    "jest.config.js",
-    "dist",
-    "node_modules"
-  ],
+  rules: {}
 }

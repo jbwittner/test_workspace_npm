@@ -6,8 +6,8 @@
     "start": "npm run start -w infra",
     "clean": "npm run clean --workspaces",
     "test": "npm run test --workspaces",
-    "lint": "eslint .",
-    "prettier": "prettier --check . ",
+    "lint": "eslint . --ext js,ts --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --check .",
     "prettier:fix": "prettier --write ."
   },
   "workspaces": [
@@ -17,6 +17,9 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "@types/node": "^20.10.5",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "eslint-plugin-jest": "^27.6.0"
   }
 }
