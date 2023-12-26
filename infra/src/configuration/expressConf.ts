@@ -1,4 +1,4 @@
-import { AppLogger } from '@monorepo/domain'
+import { AppLogger } from '@monorepo/domain/src'
 import express from 'express'
 import { UserController } from '../controller/UserController'
 import { UserInfraService } from '../service/UserInfraService'

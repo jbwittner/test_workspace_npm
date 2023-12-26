@@ -12,7 +12,7 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@monorepo/domain": ["../domain/src/index.ts"]
+      "@monorepo/domain": ["../domain/dist"],
     }
   },
   "references": [
@@ -20,6 +20,6 @@
       "path": "../domain"
     }
   ],
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,4 +1,4 @@
-import { User, UserSpi } from '@monorepo/domain'
+import { User, UserSpi } from '@monorepo/domain/src'
 
 export class UserSpiImpl implements UserSpi {
   private userMap: Map<string, User>

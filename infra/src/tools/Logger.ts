@@ -1,4 +1,4 @@
-import { AppLogger } from '@monorepo/domain'
+import { AppLogger } from '@monorepo/domain/src'
 
 export class LoggerImpl implements AppLogger {
   info = (data: string) => {

@@ -1,4 +1,4 @@
-import { AppLogger, UserApi, UserDomainService, UserSpi } from '@monorepo/domain'
+import { AppLogger, UserApi, UserDomainService, UserSpi } from '@monorepo/domain/src'
 import { initControllerAndInject, startExpressServer } from './configuration/expressConf'
 import { LoggerImpl } from './tools/Logger'
 import { UserSpiImpl } from './spi/UserSpiImpl'

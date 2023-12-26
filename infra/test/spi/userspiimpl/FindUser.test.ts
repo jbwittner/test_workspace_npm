@@ -1,17 +1,17 @@
-import { User } from '@monorepo/domain'
+import { DomainFaker } from '@monorepo/domain/test'
 import { UserSpiImpl } from '../../../src/spi/UserSpiImpl'
 import { faker } from '@faker-js/faker'
-import { v4 as uuidv4 } from 'uuid'
 
 describe('Test find user method', () => {
   let userSpiImpl: UserSpiImpl
+  let domainFaker = DomainFaker(faker)
 
   beforeEach(() => {
     userSpiImpl = new UserSpiImpl()
   })
 
   test('Create user Ok', () => {
-    const user = new User(faker.internet.userName(), uuidv4())
+    const user = domainFaker.getUser()
     const userSaved = userSpiImpl.save(user)
     expect(userSaved).toEqual(user)
 
