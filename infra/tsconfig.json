@@ -14,7 +14,6 @@
     "paths": {
       "@monorepo/domain": ["../domain/src/index.ts"]
     }
-
   },
   "references": [
     {

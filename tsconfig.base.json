@@ -7,9 +7,7 @@
     "module": "CommonJS",
     "target": "ES2020",
     "sourceMap": true,
-    "lib": [
-      "esnext"
-    ],
+    "lib": ["esnext"],
     "esModuleInterop": true,
     "alwaysStrict": true,
     "strictNullChecks": true,
@@ -19,12 +17,8 @@
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "paths": {
-      "@monorepo/domain": [
-        "domain/src/index.ts"
-      ],
-      "@monorepo/infra": [
-        "infra/src/index.ts"
-      ]
+      "@monorepo/domain": ["domain/src/index.ts"],
+      "@monorepo/infra": ["infra/src/index.ts"]
     }
   },
   "references": [
