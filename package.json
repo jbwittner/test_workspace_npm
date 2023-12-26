@@ -1,10 +1,10 @@
 {
     "name": "my-workspaces-powered-project",
     "scripts": {
-        "build": "pnpm --stream -r run build",
+        "build": "npm run build --workspaces",
         "start": "node infra/build/index.js",
-        "clean": "pnpm --stream -r run clean",
-        "test": "pnpm --stream -r run test"
+        "clean": "npm run build --workspaces",
+        "test": "npm run test --workspaces"
     },
     "workspaces": [ "domain", "infra" ]
 }
