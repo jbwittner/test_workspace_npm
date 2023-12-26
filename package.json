@@ -3,8 +3,11 @@
     "scripts": {
         "build": "npm run build --workspaces",
         "start": "node infra/build/index.js",
-        "clean": "npm run build --workspaces",
+        "clean": "npm run clean --workspaces",
         "test": "npm run test --workspaces"
     },
-    "workspaces": [ "domain", "infra" ]
+    "workspaces": [
+        "domain",
+        "infra"
+    ]
 }
