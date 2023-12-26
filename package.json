@@ -6,7 +6,8 @@
         "start": "npm run start -w infra",
         "clean": "npm run clean --workspaces",
         "test": "npm run test --workspaces",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "workspaces": [
         "domain",

@@ -3,8 +3,14 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": "standard-with-typescript",
-    "overrides": [
+    "extends": [
+        "eslint:recommended",
+        "standard",
+        "prettier",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
+      ],
+      "overrides": [
         {
             "env": {
                 "node": true
@@ -23,5 +29,6 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
-    }
+    },
+    "ignorePatterns": ["dist", "node_modules", "examples", "scripts", ".eslintrc.js"]
 }

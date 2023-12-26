@@ -5,7 +5,7 @@ export class User {
 
     constructor(username: string, userId: string) {
         this.username = username;
-        this.userId = userId;
+        this.userId = userId
     }
 
     getUserName() {
