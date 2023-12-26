@@ -6,5 +6,9 @@
     "paths": {
       "@monorepo/domain": ["../domain/build"]
     }
-  }
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
 }
