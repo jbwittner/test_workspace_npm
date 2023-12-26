@@ -4,11 +4,7 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "standard",
-        "prettier",
-        "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint"
+        "eslint:recommended"
       ],
       "overrides": [
         {
@@ -30,5 +26,4 @@ module.exports = {
     },
     "rules": {
     },
-    "ignorePatterns": ["dist", "node_modules", "examples", "scripts", ".eslintrc.js"]
 }
