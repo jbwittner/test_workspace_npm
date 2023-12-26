@@ -2,10 +2,10 @@
   "name": "@monorepo/infra",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf build",
+    "start": "node dist/src/index",
     "test": "jest"
   },
   "author": "",
