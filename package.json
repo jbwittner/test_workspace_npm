@@ -1,5 +1,6 @@
 {
     "name": "my-workspaces-powered-project",
+    "private": "true",
     "scripts": {
         "build": "npm run build --workspaces",
         "start": "node infra/build/index.js",
