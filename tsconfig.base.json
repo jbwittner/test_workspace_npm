@@ -1,33 +1,16 @@
 {
+  "extends": "@tsconfig/recommended",
   "compilerOptions": {
     "incremental": true,
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "moduleResolution": "Node",
-    "module": "CommonJS",
-    "target": "ES2020",
+    "target": "es2019",
+    "module": "commonjs",
+    "declaration": true,
     "sourceMap": true,
-    "lib": ["esnext"],
+    "composite": true,
+    "strict": true,
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@monorepo/domain": ["domain/src/index.ts"],
-      "@monorepo/infra": ["infra/src/index.ts"]
-    }
-  },
-  "references": [
-    {
-      "path": "domain"
-    },
-    {
-      "path": "infra"
-    }
-  ],
-  "exclude": ["node_modules", "dist", "*.d.ts"]
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }
