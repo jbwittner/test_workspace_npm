@@ -2,9 +2,15 @@ import { AppLogger } from '@monorepo/domain/src'
 import { Request, Response } from 'express'
 import { UserInfraService } from '../service/UserInfraService'
 import { app } from '../configuration/expressConf'
+import { UserTransformer } from '../transformer/UserTransformer'
 
 export interface UserRequest {
   username: string
+}
+
+export interface UserDTO {
+  userId: string
+  userName: string
 }
 
 export const UserController = (appLogger: AppLogger, userInfraService: UserInfraService) => {
@@ -16,7 +22,8 @@ export const UserController = (appLogger: AppLogger, userInfraService: UserInfra
       res.status(400).send('Username must be a string')
     } else {
       const user = userInfraService.createUser(username)
-      res.status(201).send(user)
+      const userDTO = UserTransformer().toUserDTO(user)
+      res.status(201).send(userDTO)
     }
   })
 
@@ -24,6 +31,7 @@ export const UserController = (appLogger: AppLogger, userInfraService: UserInfra
     appLogger.info('GET : /user/' + req.params.userId)
     const userId = req.params.userId
     const user = userInfraService.getUser(userId)
-    res.status(200).send(user)
+    const userDTO = UserTransformer().toUserDTO(user)
+    res.status(200).send(userDTO)
   })
 }
