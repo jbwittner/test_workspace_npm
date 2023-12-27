@@ -1,4 +1,4 @@
-import { User } from '../model/User'
+import { User } from '@monorepo/domain/src/model'
 
 export interface UserSpi {
   save: (user: User) => User
