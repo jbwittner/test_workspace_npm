@@ -5,14 +5,13 @@
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
-    "build": "tsc",
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "dependencies": {
     "uuid": "^9.0.1"
-  }
+  },
+  "devDependencies": {}
 }

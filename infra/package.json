@@ -4,7 +4,6 @@
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
-    "build": "tsc",
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist",
     "start": "node dist/src/index",
     "test": "jest"
