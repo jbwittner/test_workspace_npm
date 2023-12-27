@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker'
 
 describe('Test find user method', () => {
   let userSpiImpl: UserSpiImpl
-  let domainFaker = DomainFaker(faker)
+  const domainFaker = DomainFaker(faker)
 
   beforeEach(() => {
     userSpiImpl = new UserSpiImpl()
