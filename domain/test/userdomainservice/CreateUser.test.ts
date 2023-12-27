@@ -1,5 +1,5 @@
-import { UserDomainService, UserSpi } from '../../src'
-import { DomainFaker } from '@test-lib'
+import { UserDomainService, UserSpi } from '@monorepo/domain'
+import { DomainFaker } from '@monorepo/domain/test-lib'
 import { faker } from '@faker-js/faker'
 
 describe('Test createUser method', () => {

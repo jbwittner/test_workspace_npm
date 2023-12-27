@@ -2,13 +2,10 @@
     "files": [],
     "references": [
       {
-        "path": "packages/infra"
+        "path": "infra"
       },
       {
-        "path": "packages/api"
-      },
-      {
-        "path": "packages/worker"
+        "path": "domain"
       }
     ]
   }

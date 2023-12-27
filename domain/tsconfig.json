@@ -12,8 +12,7 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@test-lib": ["test-lib"],
-      "@domain": ["src"]
+      "@monorepo/domain": ["src"]
     }
   },
   "include": ["src/**/*", "test-lib/**/*", "test/**/*"],

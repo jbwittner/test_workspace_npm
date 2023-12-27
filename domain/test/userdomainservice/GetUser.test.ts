@@ -1,4 +1,4 @@
-import { User, UserDomainService, UserSpi } from '@domain'
+import { User, UserDomainService, UserSpi } from '@monorepo/domain'
 import { v4 as uuidv4 } from 'uuid'
 
 describe('Test getUser method', () => {
