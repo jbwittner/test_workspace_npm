@@ -1,5 +1,4 @@
 {
-  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "./dist",
@@ -12,7 +11,7 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@monorepo/domain": ["../domain/dist"],
+      "@monorepo/domain": ["../domain/src"],  // Pointe vers le code source du package 'domain'
     }
   },
   "references": [

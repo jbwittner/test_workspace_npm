@@ -2,8 +2,8 @@
   "name": "@monorepo/domain",
   "version": "1.0.0",
   "description": "",
-  "main": "build/src/index.js",
-  "types": "build/src/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist",

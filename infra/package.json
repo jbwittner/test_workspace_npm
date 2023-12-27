@@ -2,6 +2,7 @@
   "name": "@monorepo/infra",
   "version": "1.0.0",
   "description": "",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf build",
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@monorepo/domain": "*",
     "express": "^4.18.2"
   },
   "devDependencies": {

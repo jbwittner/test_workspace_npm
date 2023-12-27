@@ -1,4 +1,4 @@
-import { DomainFaker } from '@monorepo/domain/test'
+import { DomainFaker } from '@monorepo/domain/test-lib'
 import { UserSpiImpl } from '../../../src/spi/UserSpiImpl'
 import { faker } from '@faker-js/faker'
 
