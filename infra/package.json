@@ -4,9 +4,11 @@
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
-    "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist",
+    "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist && rimraf coverage_unit && rimraf coverage_integration",
     "start": "node dist/src/index",
-    "test": "jest"
+    "test:unit": "jest src/__tests__/unit --coverage --coverageDirectory=coverage_unit",
+    "test:integration": "jest src/__tests__/integration  --coverage --coverageDirectory=coverage_integration",
+    "test": "pnpm run test:unit && pnpm run test:integration"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/express-serve-static-core": "^4.17.41",
+    "@types/supertest": "^6.0.1",
     "supertest": "^6.3.3",
     "uuid": "^9.0.1"
   }
