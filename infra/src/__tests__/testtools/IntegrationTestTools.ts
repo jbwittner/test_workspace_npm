@@ -5,9 +5,9 @@ import { InfraIntegrationFactory } from './InfraIntegrationFactory'
 import { faker } from '@faker-js/faker'
 
 export interface ApplicationTestContext {
-  injections: ApplicationContext
-  server: Server<typeof IncomingMessage, typeof ServerResponse>
-  infraIntegrationFactory: ReturnType<typeof InfraIntegrationFactory>
+  readonly injections: ApplicationContext
+  readonly server: Server<typeof IncomingMessage, typeof ServerResponse>
+  readonly infraIntegrationFactory: ReturnType<typeof InfraIntegrationFactory>
 }
 
 export const initInjectionAndStartServer = async (): Promise<ApplicationTestContext> => {

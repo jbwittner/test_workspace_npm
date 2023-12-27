@@ -5,10 +5,10 @@ import { UserSpiImpl } from '../spi/UserSpiImpl'
 import { UserInfraService } from '../service/UserInfraService'
 
 export interface ApplicationContext {
-  appLogger: AppLogger
-  userSpi: UserSpi
-  userApi: UserApi
-  userInfraService: UserInfraService
+  readonly appLogger: AppLogger
+  readonly userSpi: UserSpi
+  readonly userApi: UserApi
+  readonly userInfraService: UserInfraService
 }
 
 export const inject = (): ApplicationContext => {
