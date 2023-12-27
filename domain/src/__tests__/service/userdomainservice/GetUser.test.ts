@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid'
-import { UserDomainService } from '../../../service'
 import { UserSpi } from '../../../spi'
 import { DomainFaker } from '../../testtools/DomainFaker'
 import { faker } from '@faker-js/faker'
+import { UserDomainService } from '../../../service'
 
 describe('Test getUser method', () => {
   let userDomainService: UserDomainService
