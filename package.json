@@ -3,6 +3,7 @@
   "private": "true",
   "scripts": {
     "build": "npm run build --workspaces",
+    "build:2": "tsc --build --verbose tsconfig.base.json",
     "start": "npm run start -w infra",
     "clean": "npm run clean --workspaces",
     "test": "npm run test --workspaces",
@@ -15,11 +16,15 @@
     "infra"
   ],
   "devDependencies": {
-    "eslint": "^8.56.0",
     "@types/node": "^20.10.5",
-    "prettier": "^3.1.1",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
-    "eslint-plugin-jest": "^27.6.0"
+    "eslint": "^8.56.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "prettier": "^3.1.1"
+  },
+  "dependencies": {
+    "@tsconfig/recommended": "^1.0.3",
+    "rimraf": "^5.0.5"
   }
 }
