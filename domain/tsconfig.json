@@ -5,7 +5,7 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@monorepo/domain": ["src"],
+      "@monorepo/domain": ["domain/src"],
     }
   },
   "include": ["src/**/*", "test-lib/**/*", "test/**/*"],
