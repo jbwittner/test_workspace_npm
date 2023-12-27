@@ -1,4 +1,4 @@
-import { AppLogger, UserApi } from '@monorepo/domain/src'
+import { AppLogger, UserApi } from '@monorepo/domain'
 
 export class UserInfraService implements UserApi {
   private userApi: UserApi
