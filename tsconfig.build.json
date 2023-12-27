@@ -1,0 +1,15 @@
+{
+    "files": [],
+    "references": [
+      {
+        "path": "packages/infra"
+      },
+      {
+        "path": "packages/api"
+      },
+      {
+        "path": "packages/worker"
+      }
+    ]
+  }
+  
