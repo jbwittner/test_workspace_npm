@@ -1,8 +1,12 @@
-import { User, UserDomainService, UserSpi } from '@monorepo/domain/src'
 import { v4 as uuidv4 } from 'uuid'
+import { UserDomainService } from '../../../service'
+import { UserSpi } from '../../../spi'
+import { DomainFaker } from '../../testtools/DomainFaker'
+import { faker } from '@faker-js/faker'
 
 describe('Test getUser method', () => {
   let userDomainService: UserDomainService
+  const domainFaker = DomainFaker(faker)
   const userSpi: jest.Mocked<UserSpi> = {
     save: jest.fn(),
     findUser: jest.fn()
@@ -15,12 +19,10 @@ describe('Test getUser method', () => {
   })
 
   test('Get user Ok', () => {
-    const userName = 'userToto'
-    const userId = uuidv4()
-    const userToFind = new User(userName, userId)
+    const userToFind = domainFaker.getUser()
 
     userSpi.findUser.mockImplementation(() => userToFind)
-    const user = userDomainService.getUser(userId)
+    const user = userDomainService.getUser(userToFind.getUserId())
 
     expect(user).toBe(userToFind)
   })

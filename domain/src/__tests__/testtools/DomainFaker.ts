@@ -1,6 +1,6 @@
 import { Faker } from '@faker-js/faker'
-import { User } from '@monorepo/domain/src'
 import { v4 as uuidv4 } from 'uuid'
+import { User } from '../../model'
 
 export const DomainFaker = (faker: Faker) => {
   const getUser = () => {

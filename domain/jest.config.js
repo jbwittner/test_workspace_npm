@@ -2,8 +2,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  moduleNameMapper: {
-    "^@test-lib$": "<rootDir>/test-lib",
-    "^@domain$": "<rootDir>/src"
-  },
+  modulePathIgnorePatterns: ["testtools"]
 }

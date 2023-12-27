@@ -3,6 +3,7 @@
   "private": "true",
   "scripts": {
     "build": "npm run build --workspaces",
+    "build:2": "tsc --build --verbose tsconfig.build.json",
     "start": "npm run start -w infra",
     "clean": "npm run clean --workspaces",
     "test": "npm run test --workspaces",

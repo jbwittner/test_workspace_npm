@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { UserSpi } from 'src/spi'
-import { User } from 'src/model'
-import { UserApi } from 'src/api'
+import { UserApi } from '../api'
+import { UserSpi } from '../spi'
+import { User } from '../model'
 
 export class UserDomainService implements UserApi {
   userSpi: UserSpi

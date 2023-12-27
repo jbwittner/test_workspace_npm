@@ -1,4 +1,4 @@
-import { User } from '../model/User'
+import { User } from '@monorepo/domain/src'
 
 export interface UserApi {
   createUser: (username: string) => User

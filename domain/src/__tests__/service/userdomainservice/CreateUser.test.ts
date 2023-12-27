@@ -1,9 +1,7 @@
-import { DomainFaker } from '@monorepo/domain/test-lib'
-import { faker } from '@faker-js/faker'
-import { UserDomainService, UserSpi } from '@monorepo/domain/src'
+import { UserDomainService } from '../../../service'
+import { UserSpi } from '../../../spi'
 
 describe('Test createUser method', () => {
-  DomainFaker(faker)
   let userDomainService: UserDomainService
   const userSpi: jest.Mocked<UserSpi> = {
     save: jest.fn(),
