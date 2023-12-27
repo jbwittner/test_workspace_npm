@@ -1,27 +1,24 @@
 import { v4 as uuidv4 } from 'uuid'
-import { UserSpi } from '../../../spi'
-import { DomainFaker } from '../../testtools/DomainFaker'
+import { DomainFactory } from '../../testtools/DomainFactory'
 import { faker } from '@faker-js/faker'
 import { UserDomainService } from '../../../service'
+import { MockUserSpiFactory } from '../../testtools/MockFactory'
 
 describe('Test getUser method', () => {
   let userDomainService: UserDomainService
-  const domainFaker = DomainFaker(faker)
-  const userSpi: jest.Mocked<UserSpi> = {
-    save: jest.fn(),
-    findUser: jest.fn()
-  }
+  const domainFactory = DomainFactory(faker)
+  const mockUserSpiFactory = MockUserSpiFactory()
 
   beforeEach(() => {
-    userSpi.save.mockClear()
-    userSpi.findUser.mockClear()
-    userDomainService = new UserDomainService(userSpi)
+    mockUserSpiFactory.mockClear()
+    userDomainService = new UserDomainService(mockUserSpiFactory.getMock())
   })
 
   test('Get user Ok', () => {
-    const userToFind = domainFaker.getUser()
+    const userToFind = domainFactory.getUser()
+    const userId = userToFind.getUserId()
 
-    userSpi.findUser.mockImplementation(() => userToFind)
+    mockUserSpiFactory.mockFindUser(userId, userToFind)
     const user = userDomainService.getUser(userToFind.getUserId())
 
     expect(user).toBe(userToFind)
@@ -29,7 +26,7 @@ describe('Test getUser method', () => {
 
   test('User not exist', () => {
     const userId = uuidv4()
-    userSpi.findUser.mockImplementation(() => undefined)
+    mockUserSpiFactory.mockFindUser(userId, undefined)
     expect(() => userDomainService.getUser(userId)).toThrow('User not exist')
   })
 })

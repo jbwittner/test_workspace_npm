@@ -1,21 +1,17 @@
 import { UserDomainService } from '../../../service'
-import { UserSpi } from '../../../spi'
+import { MockUserSpiFactory } from '../../testtools/MockFactory'
 
 describe('Test createUser method', () => {
   let userDomainService: UserDomainService
-  const userSpi: jest.Mocked<UserSpi> = {
-    save: jest.fn(),
-    findUser: jest.fn()
-  }
+  const mockUserSpiFactory = MockUserSpiFactory()
 
   beforeEach(() => {
-    userSpi.save.mockClear()
-    userSpi.findUser.mockClear()
-    userDomainService = new UserDomainService(userSpi)
+    mockUserSpiFactory.mockClear()
+    userDomainService = new UserDomainService(mockUserSpiFactory.getMock())
   })
 
   test('Create user Ok', () => {
-    userSpi.save.mockImplementation(user => user)
+    mockUserSpiFactory.mockSave()
     const userName = 'userToto'
     const user = userDomainService.createUser(userName)
     expect(user.getUserName()).toBe(userName)
