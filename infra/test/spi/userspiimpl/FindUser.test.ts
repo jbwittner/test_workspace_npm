@@ -1,5 +1,5 @@
 import { DomainFaker } from '@monorepo/domain/test-lib'
-import { UserSpiImpl } from '../../../src/spi/UserSpiImpl'
+import { UserSpiImpl } from '@spi'
 import { faker } from '@faker-js/faker'
 
 describe('Test find user method', () => {

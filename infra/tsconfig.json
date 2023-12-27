@@ -13,7 +13,7 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@monorepo/domain": ["../domain/src"],
-      "@monorepo/infra": ["src"]
+      "@spi": ["./infra/src/spi"]
     }
   },
   "references": [
