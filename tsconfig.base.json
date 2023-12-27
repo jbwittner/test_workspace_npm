@@ -1,40 +1,33 @@
 {
-    "compilerOptions": {
-      "incremental": true,
-      "outDir": "./dist",
-      "baseUrl": ".",
-      "moduleResolution": "Node",
-      "module": "CommonJS",
-      "target": "ES2020",
-      "sourceMap": true,
-      "lib": [
-        "esnext"
-      ],
-      "esModuleInterop": true,
-      "alwaysStrict": true,
-      "strictNullChecks": true,
-      "noImplicitAny": true,
-      "noImplicitReturns": true,
-      "noImplicitThis": true,
-      "noUnusedLocals": true,
-      "resolveJsonModule": true,
-      "paths": {
-        "@monorepo/domain": [
-          "domain/src/index.ts"
-        ],
-        "@monorepo/infra": [
-          "infra/src/index.ts"
-        ]
-      }
+  "compilerOptions": {
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "target": "ES2020",
+    "sourceMap": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@monorepo/domain": ["domain/src/index.ts"],
+      "@monorepo/infra": ["infra/src/index.ts"]
+    }
+  },
+  "references": [
+    {
+      "path": "domain"
     },
-    "references": [
-      {
-        "path": "domain"
-      },
-      {
-        "path": "infra"
-      }
-    ],
-    "exclude": ["node_modules", "dist", "*.d.ts"]
-  }
-  
+    {
+      "path": "infra"
+    }
+  ],
+  "exclude": ["node_modules", "dist", "*.d.ts"]
+}

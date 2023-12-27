@@ -1,1 +1,1 @@
-export {DomainFaker} from './DomainFaker'
+export { DomainFaker } from './DomainFaker'
