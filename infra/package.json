@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/express-serve-static-core": "^4.17.41",
+    "supertest": "^6.3.3",
     "uuid": "^9.0.1"
   }
 }

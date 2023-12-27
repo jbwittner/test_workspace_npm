@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { UserInfraService } from '../service/UserInfraService'
 import { app } from '../configuration/expressConf'
 
-interface UserRequest {
+export interface UserRequest {
   username: string
 }
 
