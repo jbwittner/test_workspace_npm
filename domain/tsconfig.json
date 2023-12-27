@@ -1,13 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "rootDir": ".",
     "outDir": "./dist",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@monorepo/domain": ["domain/src"],
+      "src": ["./src"]
     }
   },
-  "include": ["src/**/*", "test-lib/**/*", "test/**/*"],
+  "include": ["src/**/*", "test-lib/**/*"],
   "exclude": ["node_modules", "dist"]
 }
