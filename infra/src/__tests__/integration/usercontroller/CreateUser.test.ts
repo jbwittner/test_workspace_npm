@@ -3,7 +3,6 @@ import request from 'supertest'
 import { faker } from '@faker-js/faker'
 import { ApplicationTestContext, initInjectionAndStartServer } from '../../testtools/IntegrationTestTools'
 import { app } from '../../../configuration/expressConf'
-import { User } from '@monorepo/domain'
 
 describe('Test create user method', () => {
   let testContext: ApplicationTestContext
