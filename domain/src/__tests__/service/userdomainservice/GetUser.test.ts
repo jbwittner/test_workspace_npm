@@ -13,19 +13,19 @@ describe('Test getUser method', () => {
     mockUserSpiFactory.mockClear()
   })
 
-  test('Get user Ok', () => {
+  test('Get user Ok', async () => {
     const userToFind = domainFactory.getUser()
     const userId = userToFind.getUserId()
 
     mockUserSpiFactory.mockFindUser(userId, userToFind)
-    const user = userDomainService.getUser(userToFind.getUserId())
+    const user = await userDomainService.getUser(userToFind.getUserId())
 
     expect(user).toBe(userToFind)
   })
 
-  test('User not exist', () => {
+  test('User not exist test', async () => {
     const userId = uuidv4()
     mockUserSpiFactory.mockFindUser(userId, undefined)
-    expect(() => userDomainService.getUser(userId)).toThrow('User not exist')
+    expect(userDomainService.getUser(userId)).rejects.toThrow('User not exist')
   })
 })

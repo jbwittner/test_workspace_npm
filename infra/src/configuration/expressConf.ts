@@ -14,10 +14,8 @@ export const initControllerAndInject = (appLogger: AppLogger, userInfraService: 
 
 export const startExpressServer = (port: number, appLogger: AppLogger): Promise<http.Server> => {
   return new Promise((resolve, reject) => {
-    const app = express()
-
     const server = app
-      .listen(port, '127.0.0.1', () => {
+      .listen(port, () => {
         appLogger.info(`Server running on ${port}`)
         resolve(server)
       })

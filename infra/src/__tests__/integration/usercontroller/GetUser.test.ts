@@ -17,12 +17,12 @@ describe('Test find user method', () => {
   beforeEach(() => {})
 
   test('Get user Ok', async () => {
-    const user = testContext.infraIntegrationFactory.getUser()
+    const user = await testContext.infraIntegrationFactory.getUser()
 
     const res = await request(app).get('/user/' + user.getUserId())
 
     expect(res.ok).toBeTruthy()
-    expect(res.body.username).toEqual(user.getUserName())
+    expect(res.body.userName).toEqual(user.getUserName())
     expect(res.body.userId).toEqual(user.getUserId())
   })
 

@@ -9,10 +9,10 @@ describe('Test createUser method', () => {
     mockUserSpiFactory.mockClear()
   })
 
-  test('Create user Ok', () => {
+  test('Create user Ok', async () => {
     mockUserSpiFactory.mockSave()
     const userName = 'userToto'
-    const user = userDomainService.createUser(userName)
+    const user = await userDomainService.createUser(userName)
     expect(user.getUserName()).toBe(userName)
   })
 })
