@@ -16,10 +16,10 @@ export const MockUserSpiFactory = () => {
     mockUserSpi.save.mockImplementation(user => Promise.resolve(user))
   }
 
-  const mockFindUser = (userId: string, userToFind: User | undefined) => {
+  const mockFindUser = (userId: string, userToFind: User | null) => {
     mockUserSpi.findUser.mockImplementation(input => {
       if (input !== userId) {
-        return Promise.resolve(undefined)
+        return Promise.resolve(null)
       } else {
         return Promise.resolve(userToFind)
       }

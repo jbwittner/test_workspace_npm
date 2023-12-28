@@ -1,26 +1,47 @@
 import { AppLogger } from '@monorepo/domain'
-import { Sequelize } from 'sequelize'
+import { Dialect, Sequelize } from 'sequelize'
 import { ModelManager } from '../spi/models/ModelManager'
 
-export const initSequelize = (appLogger: AppLogger) => {
-  const sequelize = new Sequelize('hexanpmmysql_db', 'hexanpmmysql_user', 'HexaNpmMysqlPass2023', {
-    host: 'localhost',
-    dialect: 'mysql',
+export interface SequelizeConfiguration {
+  database: string,
+  user: string,
+  password: string,
+  host: string,
+  port: number
+  dialiect: Dialect,
+  createdatabase: boolean,
+  forcecreation: boolean
+}
+
+export const sequelizeConfiguration: SequelizeConfiguration = {
+  database: 'hexanpmmysql_db',
+  user: 'hexanpmmysql_user',
+  password: 'HexaNpmMysqlPass2023',
+  host: 'localhost',
+  port: 3306,
+  dialiect: 'mysql',
+  createdatabase: false,
+  forcecreation: false
+}
+
+export const initSequelize = async (appLogger: AppLogger, sequelizeConfiguration: SequelizeConfiguration) => {
+  const sequelize = new Sequelize(sequelizeConfiguration.database, sequelizeConfiguration.user, sequelizeConfiguration.password, {
+    host: sequelizeConfiguration.host,
+    dialect: sequelizeConfiguration.dialiect,
+    port: sequelizeConfiguration.port,
     logging: (...msg) => appLogger.info(msg)
   })
 
   ModelManager(sequelize)
 
-  const CREATE_DATABASE = false
-  const FORCE_CREATION = true
-
-  if (CREATE_DATABASE) {
-    sequelize.sync({ force: FORCE_CREATION }).then(() => {
+  if (sequelizeConfiguration.createdatabase) {
+    sequelize.sync({ force: sequelizeConfiguration.forcecreation }).then(() => {
       appLogger.info('All models were synchronized successfully.')
     })
   }
 
-  return {
-    sequelize
-  }
+  await sequelize.authenticate()
+  appLogger.info('Connection has been established successfully.')
+
+  return sequelize
 }

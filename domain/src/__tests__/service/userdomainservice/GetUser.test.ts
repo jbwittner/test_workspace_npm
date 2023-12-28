@@ -25,7 +25,7 @@ describe('Test getUser method', () => {
 
   test('User not exist test', async () => {
     const userId = uuidv4()
-    mockUserSpiFactory.mockFindUser(userId, undefined)
+    mockUserSpiFactory.mockFindUser(userId, null)
     expect(userDomainService.getUser(userId)).rejects.toThrow('User not exist')
   })
 })

@@ -1,8 +1,7 @@
 import { DataTypes, InferAttributes, InferCreationAttributes, Model, Sequelize } from 'sequelize'
 
-export class UserEntity extends Model<InferAttributes<UserEntity>, InferCreationAttributes<UserEntity>> {
+export class UserEntity extends Model {
   declare userId: string
-
   declare userName: string
 }
 
