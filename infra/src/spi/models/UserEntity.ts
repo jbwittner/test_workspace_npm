@@ -1,4 +1,4 @@
-import { DataTypes, InferAttributes, InferCreationAttributes, Model, Sequelize } from 'sequelize'
+import { DataTypes, Model, Sequelize } from 'sequelize'
 
 export class UserEntity extends Model {
   declare userId: string

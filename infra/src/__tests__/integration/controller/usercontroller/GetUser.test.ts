@@ -1,39 +1,25 @@
 import request from 'supertest'
-import { ApplicationTestContext, initInjectionAndStartServer } from '../../../testtools/IntegrationTestTools'
 import { app } from '../../../../configuration/expressConf'
 import { v4 as uuidv4 } from 'uuid'
+import { MockUserApiFactory } from '../../../testtools/ControllerIntegrationTestTools'
+import { User } from '@monorepo/domain'
+import { faker } from '@faker-js/faker'
 
-describe('Test find user method', () => {
-  jest.setTimeout(60000)
+export const GetUserOk = async (mockUserApiFactory: MockUserApiFactory) => {
+  const user = new User(faker.internet.userName(), uuidv4())
+  mockUserApiFactory.mockGetUser(user.getUserId(), user)
 
-  let testContext: ApplicationTestContext
+  const res = await request(app).get('/user/' + user.getUserId())
 
-  beforeAll(async () => {
-    testContext = await initInjectionAndStartServer()
-  })
+  expect(res.status).toEqual(200)
+  expect(res.body.userName).toEqual(user.getUserName())
+  expect(res.body.userId).toEqual(user.getUserId())
+}
 
-  afterAll(async () => {
-    testContext.server.close()
-    await testContext.startedContainer.stop()
-  })
+export const UserNotExist = async (mockUserApiFactory: MockUserApiFactory) => {
+  const userId = uuidv4()
+  mockUserApiFactory.mockGetUserFail(userId)
+  const res = await request(app).get('/user/' + userId)
 
-  beforeEach(() => {})
-
-  test('Get user Ok', async () => {
-    const user = await testContext.infraIntegrationFactory.getUser()
-
-    const res = await request(app).get('/user/' + user.getUserId())
-
-    expect(res.ok).toBeTruthy()
-    expect(res.body.userName).toEqual(user.getUserName())
-    expect(res.body.userId).toEqual(user.getUserId())
-  })
-
-  test('User not exist', async () => {
-    const userId = uuidv4()
-
-    const res = await request(app).get('/user/' + userId)
-
-    expect(res.statusCode).toEqual(500)
-  })
-})
+  expect(res.statusCode).toEqual(500)
+}

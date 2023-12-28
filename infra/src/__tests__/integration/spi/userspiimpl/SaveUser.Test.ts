@@ -1,15 +1,13 @@
-import request from 'supertest'
-import { ApplicationTestContext, initInjectionAndStartServer } from '../../../testtools/IntegrationTestTools'
-import { app } from '../../../../configuration/expressConf'
+import { SpiApplicationTestContext } from '../../../testtools/SpiIntegrationTestTools'
 import { v4 as uuidv4 } from 'uuid'
 import { User } from '@monorepo/domain'
 import { faker } from '@faker-js/faker'
 import { UserEntity } from '../../../../spi/models/UserEntity'
 
-export const SaveUserTest = async (testContext: ApplicationTestContext) => {
+export const SaveUserTest = async (testContext: SpiApplicationTestContext) => {
   const user = new User(faker.internet.userName(), uuidv4())
 
-  await testContext.injections.userSpi.save(user)
+  await testContext.userSpi.save(user)
 
   const userEntity = await UserEntity.findByPk(user.getUserId())
 
