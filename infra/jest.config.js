@@ -4,6 +4,6 @@ module.exports = {
   testEnvironment: 'node',
   modulePathIgnorePatterns: [
     "testtools",
-    "spi/*"
+    "spi/userspiimpl"
   ]
 };
