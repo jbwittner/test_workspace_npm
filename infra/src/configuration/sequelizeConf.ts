@@ -3,13 +3,13 @@ import { Dialect, Sequelize } from 'sequelize'
 import { ModelManager } from '../spi/models/ModelManager'
 
 export interface SequelizeConfiguration {
-  database: string,
-  user: string,
-  password: string,
-  host: string,
+  database: string
+  user: string
+  password: string
+  host: string
   port: number
-  dialiect: Dialect,
-  createdatabase: boolean,
+  dialiect: Dialect
+  createdatabase: boolean
   forcecreation: boolean
 }
 

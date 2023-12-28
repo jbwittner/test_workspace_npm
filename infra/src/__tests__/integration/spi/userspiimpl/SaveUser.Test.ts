@@ -16,6 +16,4 @@ export const SaveUserTest = async (testContext: ApplicationTestContext) => {
   expect(userEntity).not.toBeNull()
   expect(userEntity!.userId).toBe(user.getUserId())
   expect(userEntity!.userName).toBe(user.getUserName())
-  console.log("End test")
-
 }

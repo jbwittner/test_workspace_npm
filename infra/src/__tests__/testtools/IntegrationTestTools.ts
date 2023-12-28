@@ -25,11 +25,10 @@ export interface ApplicationTestContext {
 }
 
 export const initInjectionAndStartServer = async (): Promise<ApplicationTestContext> => {
-
-  const mySqlContainer = new MySqlContainer();
+  const mySqlContainer = new MySqlContainer()
   const startedContainer = await mySqlContainer.start()
-  console.log("Container started")
-  
+  console.log('Container started')
+
   const appLogger: AppLogger = new LoggerImpl()
 
   const sequelize = await initSequelize(appLogger, {
@@ -47,7 +46,6 @@ export const initInjectionAndStartServer = async (): Promise<ApplicationTestCont
   const userApi: UserApi = new UserDomainService(userSpi)
   const userInfraService: UserInfraService = new UserInfraService(appLogger, userApi)
   initControllerAndInject(appLogger, userInfraService)
-
 
   const server = await startExpressServer(0, appLogger)
   const infraIntegrationFactory = InfraIntegrationFactory(faker, userSpi)

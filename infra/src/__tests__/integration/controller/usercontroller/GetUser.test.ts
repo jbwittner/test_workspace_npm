@@ -4,7 +4,7 @@ import { app } from '../../../../configuration/expressConf'
 import { v4 as uuidv4 } from 'uuid'
 
 describe('Test find user method', () => {
-  jest.setTimeout(60000);
+  jest.setTimeout(60000)
 
   let testContext: ApplicationTestContext
 

@@ -5,7 +5,7 @@ import { ApplicationTestContext, initInjectionAndStartServer } from '../../../te
 import { app } from '../../../../configuration/expressConf'
 
 describe('Test create user method', () => {
-  jest.setTimeout(60000);
+  jest.setTimeout(60000)
 
   let testContext: ApplicationTestContext
 
@@ -21,7 +21,6 @@ describe('Test create user method', () => {
   beforeEach(() => {})
 
   test('toto', async () => {
-
     const user = await testContext.infraIntegrationFactory.getUser()
     const userFinded = await testContext.injections.userSpi.findUser(user.getUserId())
     expect(userFinded).toEqual(user)
