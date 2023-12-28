@@ -6,7 +6,7 @@ import { User } from '@monorepo/domain'
 import { faker } from '@faker-js/faker'
 import { UserEntity } from '../../../../spi/models/UserEntity'
 
-describe('IntegrationTest', () => {
+export const SaveUserTest = () => {
   jest.setTimeout(60000);
 
   let testContext: ApplicationTestContext
@@ -35,4 +35,4 @@ describe('IntegrationTest', () => {
     expect(userEntity!.userName).toBe(user.getUserName())
   })
 
-})
+}

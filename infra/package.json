@@ -7,7 +7,7 @@
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist && rimraf coverage_unit && rimraf coverage_integration",
     "start": "node dist/src/index",
     "test:unit": "jest src/__tests__/unit --coverage --coverageDirectory=coverage_unit",
-    "test:integration": "jest --runInBand src/__tests__/integration --coverage --coverageDirectory=coverage_integration",
+    "test:integration": "jest --runInBand src/__tests__/integration/TestWrapper.test.ts --coverage --coverageDirectory=coverage_integration",
     "test": "pnpm run test:unit && pnpm run test:integration"
   },
   "author": "",
