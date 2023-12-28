@@ -2,14 +2,14 @@ import { faker } from '@faker-js/faker'
 import { UserTransformer } from '../../../../transformer/UserTransformer'
 import { InfraUnitFactory } from '../../../testtools/InfraUnitFactory'
 
-describe('Test toUserDTO method', () => {
+describe('Test toUserEntity method', () => {
   const userTransformer = UserTransformer()
   const infraUnitFactory = InfraUnitFactory(faker)
 
   test('Ok', () => {
     const user = infraUnitFactory.getUser()
-    const userDTO = userTransformer.toUserDTO(user)
-    expect(userDTO.userId).toBe(user.getUserId())
-    expect(userDTO.userName).toBe(user.getUserName())
+    const toUserEntity = userTransformer.toUserEntity(user)
+    expect(toUserEntity.userId).toBe(user.getUserId())
+    expect(toUserEntity.userName).toBe(user.getUserName())
   })
 })
