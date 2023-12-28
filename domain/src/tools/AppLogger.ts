@@ -1,6 +1,7 @@
-export type LogInfo = (data: string) => void
-export type LogWarn = (data: string) => void
-export type LogError = (data: string) => void
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+export type LogInfo = (data: any) => void
+export type LogWarn = (data: any) => void
+export type LogError = (data: any) => void
 
 export interface AppLogger {
   info: LogInfo
