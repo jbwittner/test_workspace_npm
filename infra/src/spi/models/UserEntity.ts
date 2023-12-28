@@ -1,7 +1,8 @@
-import { DataTypes, Model, Sequelize } from 'sequelize'
+import { DataTypes, InferAttributes, InferCreationAttributes, Model, Sequelize } from 'sequelize'
 
-class UserEntity extends Model {
+export class UserEntity extends Model<InferAttributes<UserEntity>, InferCreationAttributes<UserEntity>> {
   declare userId: string
+
   declare userName: string
 }
 
@@ -10,11 +11,14 @@ export const initUserEntityModel = (sequelize: Sequelize) => {
     {
       userId: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true,
+        field: 'USER_ID'
       },
       userName: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'USER_NAME'
       }
     },
     {

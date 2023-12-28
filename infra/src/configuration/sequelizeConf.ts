@@ -11,7 +11,7 @@ export const initSequelize = (appLogger: AppLogger) => {
 
   ModelManager(sequelize)
 
-  const CREATE_DATABASE = true
+  const CREATE_DATABASE = false
   const FORCE_CREATION = true
 
   if (CREATE_DATABASE) {

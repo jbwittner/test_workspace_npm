@@ -1,18 +1,21 @@
 import { User, UserSpi } from '@monorepo/domain'
+import { UserTransformer } from '../transformer/UserTransformer'
+import { UserEntity } from './models/UserEntity'
 
 export class UserSpiImpl implements UserSpi {
-  private userMap: Map<string, User>
-
-  constructor() {
-    this.userMap = new Map()
-  }
 
   async findUser(userId: string) {
-    return this.userMap.get(userId)
+    const userEntity = await UserEntity.findByPk(userId)
+    if(userEntity){
+      return UserTransformer().fromUserEntity(userEntity);
+    } else {
+      return null
+    }
   }
 
   async save(user: User) {
-    this.userMap.set(user.getUserId(), user)
-    return user
+    const UserEntity = UserTransformer().toUserEntity(user);
+    const UserEntitySaved = await UserEntity.save()
+    return UserTransformer().fromUserEntity(UserEntitySaved);
   }
 }
