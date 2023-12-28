@@ -18,6 +18,7 @@ describe('IntegrationTest', () => {
   afterAll(async () => {
     testContext.server.close()
     await testContext.sequelize.close()
+    await testContext.startedContainer.stop()
   })
 
   beforeEach(() => {})
@@ -30,9 +31,8 @@ describe('IntegrationTest', () => {
     const userEntity = await UserEntity.findByPk(user.getUserId())
 
     expect(userEntity).not.toBeNull()
-    expect(userEntity?.userId).toBe(user.getUserId())
-    expect(userEntity?.userName).toBe(user.getUserName())
-
+    expect(userEntity!.userId).toBe(user.getUserId())
+    expect(userEntity!.userName).toBe(user.getUserName())
   })
 
 })

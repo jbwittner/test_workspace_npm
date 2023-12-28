@@ -3,7 +3,6 @@ import { ApplicationTestContext, initInjectionAndStartServer } from '../../../te
 import { app } from '../../../../configuration/expressConf'
 import { v4 as uuidv4 } from 'uuid'
 
-/*
 describe('Test find user method', () => {
   jest.setTimeout(60000);
 
@@ -13,8 +12,9 @@ describe('Test find user method', () => {
     testContext = await initInjectionAndStartServer()
   })
 
-  afterAll(() => {
+  afterAll(async () => {
     testContext.server.close()
+    await testContext.startedContainer.stop()
   })
 
   beforeEach(() => {})
@@ -37,4 +37,3 @@ describe('Test find user method', () => {
     expect(res.statusCode).toEqual(500)
   })
 })
-*/

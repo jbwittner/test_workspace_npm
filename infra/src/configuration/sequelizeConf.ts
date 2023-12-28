@@ -35,9 +35,8 @@ export const initSequelize = async (appLogger: AppLogger, sequelizeConfiguration
   ModelManager(sequelize)
 
   if (sequelizeConfiguration.createdatabase) {
-    sequelize.sync({ force: sequelizeConfiguration.forcecreation }).then(() => {
-      appLogger.info('All models were synchronized successfully.')
-    })
+    await sequelize.sync({ force: sequelizeConfiguration.forcecreation })
+    appLogger.info('All models were synchronized successfully.')
   }
 
   await sequelize.authenticate()

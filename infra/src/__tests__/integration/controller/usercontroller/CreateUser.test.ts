@@ -4,7 +4,6 @@ import { faker } from '@faker-js/faker'
 import { ApplicationTestContext, initInjectionAndStartServer } from '../../../testtools/IntegrationTestTools'
 import { app } from '../../../../configuration/expressConf'
 
-/*
 describe('Test create user method', () => {
   jest.setTimeout(60000);
 
@@ -14,8 +13,9 @@ describe('Test create user method', () => {
     testContext = await initInjectionAndStartServer()
   })
 
-  afterAll(() => {
+  afterAll(async () => {
     testContext.server.close()
+    await testContext.startedContainer.stop()
   })
 
   beforeEach(() => {})
@@ -52,4 +52,3 @@ describe('Test create user method', () => {
     expect(res.statusCode).toEqual(400)
   })
 })
-*/
