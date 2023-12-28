@@ -10,17 +10,17 @@ export class UserDomainService implements UserApi {
     this.userSpi = userSpi
   }
 
-  getUser(userId: string) {
-    const finded = this.userSpi.findUser(userId)
+  async getUser(userId: string) {
+    const finded = await this.userSpi.findUser(userId)
     if (finded === undefined) {
       throw new Error('User not exist')
     }
     return finded
   }
 
-  createUser(username: string) {
+  async createUser(username: string) {
     const userId = uuidv4()
     const user = new User(username, userId)
-    return this.userSpi.save(user)
+    return await this.userSpi.save(user)
   }
 }

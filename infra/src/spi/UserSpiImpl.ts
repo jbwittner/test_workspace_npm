@@ -7,11 +7,11 @@ export class UserSpiImpl implements UserSpi {
     this.userMap = new Map()
   }
 
-  findUser(userId: string) {
+  async findUser(userId: string) {
     return this.userMap.get(userId)
   }
 
-  save(user: User) {
+  async save(user: User) {
     this.userMap.set(user.getUserId(), user)
     return user
   }
