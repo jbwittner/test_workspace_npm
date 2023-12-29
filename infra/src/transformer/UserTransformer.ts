@@ -5,13 +5,13 @@ import { UserEntity } from '../spi/models/UserEntity'
 export const UserTransformer = () => {
   const toUserDTO = (user: User): UserDTO => {
     return {
-      userId: user.getUserId(),
-      userName: user.getUserName()
+      userId: user.userId,
+      userName: user.username
     }
   }
 
   const toUserEntity = (user: User): UserEntity => {
-    return new UserEntity(user.getUserId(), user.getUserName())
+    return new UserEntity(user.userId, user.username)
   }
 
   const fromUserEntity = (userEntity: UserEntity): User => {
