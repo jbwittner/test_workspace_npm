@@ -10,22 +10,21 @@ import { AppDataSource } from './configuration/typeOrmConf'
 
 export const APPLICATION_PORT = 8080
 
-const setupApplication =async () => {
-    const appLogger: AppLogger = new LoggerImpl()
+const setupApplication = async () => {
+  const appLogger: AppLogger = new LoggerImpl()
 
-    //Init sequelize
-    await AppDataSource.initialize()
+  //Init sequelize
+  await AppDataSource.initialize()
 
-    const userSpi: UserSpi = new UserSpiImpl()
-    const groupSpi: GroupSpi = new GroupSpiImpl()
-    const userGroupSpi: UserGroupSpi = new UserGroupSpiImpl()
-    const userInfraService: UserInfraService = new UserInfraService(appLogger, userSpi)
-    const groupInfraService: GroupInfraService = new GroupInfraService(appLogger, groupSpi, userSpi, userGroupSpi)
-    initControllerAndInject(appLogger, userInfraService)
+  const userSpi: UserSpi = new UserSpiImpl()
+  const groupSpi: GroupSpi = new GroupSpiImpl()
+  const userGroupSpi: UserGroupSpi = new UserGroupSpiImpl()
+  const userInfraService: UserInfraService = new UserInfraService(appLogger, userSpi)
+  const groupInfraService: GroupInfraService = new GroupInfraService(appLogger, groupSpi, userSpi, userGroupSpi)
+  initControllerAndInject(appLogger, userInfraService)
 
-    //Start express server
-    startExpressServer(APPLICATION_PORT, appLogger)
-
+  //Start express server
+  startExpressServer(APPLICATION_PORT, appLogger)
 }
 
 setupApplication()

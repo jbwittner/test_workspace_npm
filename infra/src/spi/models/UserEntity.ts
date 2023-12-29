@@ -1,15 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, Column, PrimaryColumn } from 'typeorm'
 
-@Entity()
+@Entity('USERS')
 export class UserEntity {
-
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn({ name: 'USER_ID' })
   userId: string
 
-  @Column()
+  @Column({ name: 'USER_NAME' })
   userName: string
 
-  constructor(userId:string, userName: string){
+  constructor(userId: string, userName: string) {
     this.userId = userId
     this.userName = userName
   }
