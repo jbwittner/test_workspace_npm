@@ -6,7 +6,7 @@ export const ModelManager = (sequelize: Sequelize) => {
   initUserEntityModel(sequelize)
   iniGroupEntityModel(sequelize)
 
-  GroupEntity.belongsToMany(UserEntity, { through: 'USER_GROUPS' });
-  UserEntity.belongsToMany(GroupEntity, { through: 'USER_GROUPS' });
-
+  // Many to Many between user and group
+  GroupEntity.belongsToMany(UserEntity, { through: 'USER_GROUPS' })
+  UserEntity.belongsToMany(GroupEntity, { through: 'USER_GROUPS' })
 }

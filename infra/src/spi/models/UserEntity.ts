@@ -27,6 +27,4 @@ export const initUserEntityModel = (sequelize: Sequelize) => {
       tableName: 'USER_ENTITIES'
     }
   )
-
-
 }

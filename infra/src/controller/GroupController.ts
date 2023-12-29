@@ -1,5 +1,4 @@
-
 export interface GroupDTO {
-    groupId: string
-    groupName: string
-  }
+  groupId: string
+  groupName: string
+}

@@ -11,9 +11,9 @@ export class GroupDomainService implements GroupApi {
   private userGroupSpi: UserGroupSpi
   private userSpi: UserSpi
 
-  constructor(groupSpi: GroupSpi, userSpi: UserSpi, userGroupSpi:UserGroupSpi) {
+  constructor(groupSpi: GroupSpi, userSpi: UserSpi, userGroupSpi: UserGroupSpi) {
     this.groupSpi = groupSpi
-    this.userGroupSpi= userGroupSpi
+    this.userGroupSpi = userGroupSpi
     this.userSpi = userSpi
   }
 

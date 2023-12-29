@@ -6,15 +6,15 @@ export class GroupEntity extends Model {
 }
 
 export const iniGroupEntityModel = (sequelize: Sequelize) => {
-    GroupEntity.init(
+  GroupEntity.init(
     {
-    groupId: {
+      groupId: {
         type: DataTypes.STRING,
         allowNull: false,
         primaryKey: true,
         field: 'GROUP_ID'
       },
-    groupName: {
+      groupName: {
         type: DataTypes.STRING,
         allowNull: false,
         field: 'GROUP_NAME'
@@ -26,5 +26,4 @@ export const iniGroupEntityModel = (sequelize: Sequelize) => {
       tableName: 'GROUP_ENTITIES'
     }
   )
-
 }
