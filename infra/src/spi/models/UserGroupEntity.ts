@@ -9,15 +9,15 @@ export class UserGroupEntity {
   userGroupId: string
 
   @ManyToOne(() => UserEntity) // note: we will create author property in the Photo class below
-  userEntity: UserEntity
+  userEntity: Promise<UserEntity>
 
   @ManyToOne(() => GroupEntity)
-  groupEntity: GroupEntity
+  groupEntity: Promise<GroupEntity>
 
   constructor(userGroupId: string, userEntity: UserEntity, groupEntity: GroupEntity){
     this.userGroupId = userGroupId
-    this.userEntity = userEntity
-    this.groupEntity = groupEntity
+    this.userEntity = Promise.resolve(userEntity)
+    this.groupEntity = Promise.resolve(groupEntity)
   }
 
 }
