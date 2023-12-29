@@ -1,4 +1,5 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
+import { GroupEntity } from './GroupEntity'
 
 export class UserEntity extends Model {
   declare userId: string
@@ -22,7 +23,10 @@ export const initUserEntityModel = (sequelize: Sequelize) => {
     },
     {
       sequelize,
-      modelName: 'UserEntity'
+      modelName: 'UserEntity',
+      tableName: 'USER_ENTITIES'
     }
   )
+
+
 }

@@ -4,7 +4,7 @@ import { UserSpi } from '../spi'
 import { User } from '../model'
 
 export class UserDomainService implements UserApi {
-  userSpi: UserSpi
+  private userSpi: UserSpi
 
   constructor(userSpi: UserSpi) {
     this.userSpi = userSpi

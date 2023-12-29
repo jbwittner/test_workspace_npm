@@ -20,8 +20,8 @@ export const sequelizeConfiguration: SequelizeConfiguration = {
   host: 'localhost',
   port: 3306,
   dialiect: 'mysql',
-  createdatabase: false,
-  forcecreation: false
+  createdatabase: true,
+  forcecreation: true
 }
 
 export const initSequelize = async (appLogger: AppLogger, sequelizeConfiguration: SequelizeConfiguration) => {
