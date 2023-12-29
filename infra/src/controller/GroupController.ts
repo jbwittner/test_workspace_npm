@@ -1,4 +1,4 @@
-import { AppLogger } from "@monorepo/domain"
+import { AppLogger } from '@monorepo/domain'
 
 export interface GroupRequest {
   groupname: string

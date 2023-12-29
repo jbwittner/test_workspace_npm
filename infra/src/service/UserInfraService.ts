@@ -1,12 +1,12 @@
-import { AppLogger, UserApi } from '@monorepo/domain'
+import { AppLogger, UserApi, UserDomainService, UserSpi } from '@monorepo/domain'
 
 export class UserInfraService implements UserApi {
   private userApi: UserApi
   private logger: AppLogger
 
-  constructor(logger: AppLogger, userApi: UserApi) {
-    this.userApi = userApi
+  constructor(logger: AppLogger, userSpi: UserSpi) {
     this.logger = logger
+    this.userApi = new UserDomainService(userSpi)
   }
   createUser(username: string) {
     this.logger.info('createUser')

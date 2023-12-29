@@ -1,12 +1,14 @@
 import { Sequelize } from 'sequelize'
 import { UserEntity, initUserEntityModel } from './UserEntity'
 import { GroupEntity, iniGroupEntityModel } from './GroupEntity'
+import { UserGroupEntity, initUserGroupEntityModel } from './UserGroupEntity'
 
 export const ModelManager = (sequelize: Sequelize) => {
   initUserEntityModel(sequelize)
   iniGroupEntityModel(sequelize)
+  initUserGroupEntityModel(sequelize)
 
   // Many to Many between user and group
-  GroupEntity.belongsToMany(UserEntity, { through: 'USER_GROUPS' })
-  UserEntity.belongsToMany(GroupEntity, { through: 'USER_GROUPS' })
+  GroupEntity.hasMany(UserGroupEntity)
+  UserEntity.hasMany(UserGroupEntity)
 }
