@@ -1,23 +1,17 @@
-import { DataTypes, Model, Sequelize } from 'sequelize'
+import { Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm"
+import { UserEntity } from "./UserEntity"
+import { GroupEntity } from "./GroupEntity"
 
-export class UserGroupEntity extends Model {
-  declare userGroupId: string
-}
+@Entity()
+export class UserGroupEntity {
 
-export const initUserGroupEntityModel = (sequelize: Sequelize) => {
-  UserGroupEntity.init(
-    {
-      userGroupId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        field: 'USER_ID'
-      }
-    },
-    {
-      sequelize,
-      modelName: 'UserGroupEntity',
-      tableName: 'USER_GROUP_ENTITIES'
-    }
-  )
+  @PrimaryColumn()
+  userGroupId: string
+
+  @ManyToOne(() => UserEntity) // note: we will create author property in the Photo class below
+  userEntity: UserEntity
+
+  @ManyToOne(() => GroupEntity)
+  groupEntity: GroupEntity
+
 }

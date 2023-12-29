@@ -6,7 +6,7 @@ services:
     image: mysql:8.0.33
     container_name: hexa_npm_mysql
     ports:
-      - '8306:3306'
+      - '3306:3306'
     volumes:
       - db_hexa_npm:/var/lib/mysql
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci

@@ -1,29 +1,16 @@
-import { DataTypes, Model, Sequelize } from 'sequelize'
+import { Entity, Column, PrimaryColumn } from "typeorm"
 
-export class GroupEntity extends Model {
-  declare groupId: string
-  declare groupName: string
-}
+@Entity()
+export class GroupEntity {
 
-export const iniGroupEntityModel = (sequelize: Sequelize) => {
-  GroupEntity.init(
-    {
-      groupId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        field: 'GROUP_ID'
-      },
-      groupName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'GROUP_NAME'
-      }
-    },
-    {
-      sequelize,
-      modelName: 'GroupEntity',
-      tableName: 'GROUP_ENTITIES'
-    }
-  )
+  @PrimaryColumn()
+  groupId: string
+
+  @Column()
+  groupName: string
+
+  constructor(groupId:string, groupName: string){
+    this.groupId = groupId
+    this.groupName = groupName
+  }
 }

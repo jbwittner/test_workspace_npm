@@ -2,7 +2,6 @@ import { AppLogger } from '@monorepo/domain/src'
 import { NextFunction, Request, Response } from 'express'
 import { UserInfraService } from '../service/UserInfraService'
 import { app } from '../configuration/expressConf'
-import { UserTransformer } from '../transformer/UserTransformer'
 
 export interface UserRequest {
   username: string
@@ -24,7 +23,7 @@ export const UserController = (appLogger: AppLogger, userInfraService: UserInfra
       userInfraService
         .createUser(username)
         .then(user => {
-          const userDTO = UserTransformer().toUserDTO(user)
+          const userDTO = null
           res.status(201).send(userDTO)
         })
         .catch(error => {
@@ -39,7 +38,7 @@ export const UserController = (appLogger: AppLogger, userInfraService: UserInfra
     userInfraService
       .getUser(userId)
       .then(user => {
-        const userDTO = UserTransformer().toUserDTO(user)
+        const userDTO = null
         res.status(200).send(userDTO)
       })
       .catch(error => {

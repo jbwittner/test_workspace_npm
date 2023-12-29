@@ -1,30 +1,16 @@
-import { DataTypes, Model, Sequelize } from 'sequelize'
-import { GroupEntity } from './GroupEntity'
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
-export class UserEntity extends Model {
-  declare userId: string
-  declare userName: string
-}
+@Entity()
+export class UserEntity {
 
-export const initUserEntityModel = (sequelize: Sequelize) => {
-  UserEntity.init(
-    {
-      userId: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        primaryKey: true,
-        field: 'USER_ID'
-      },
-      userName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        field: 'USER_NAME'
-      }
-    },
-    {
-      sequelize,
-      modelName: 'UserEntity',
-      tableName: 'USER_ENTITIES'
-    }
-  )
+  @PrimaryGeneratedColumn()
+  userId: string
+
+  @Column()
+  userName: string
+
+  constructor(userId:string, userName: string){
+    this.userId = userId
+    this.userName = userName
+  }
 }
