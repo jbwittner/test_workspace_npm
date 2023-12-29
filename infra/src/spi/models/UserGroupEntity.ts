@@ -14,4 +14,10 @@ export class UserGroupEntity {
   @ManyToOne(() => GroupEntity)
   groupEntity: GroupEntity
 
+  constructor(userGroupId: string, userEntity: UserEntity, groupEntity: GroupEntity){
+    this.userGroupId = userGroupId
+    this.userEntity = userEntity
+    this.groupEntity = groupEntity
+  }
+
 }
