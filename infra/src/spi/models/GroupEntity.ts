@@ -1,5 +1,4 @@
 import { DataTypes, Model, Sequelize } from 'sequelize'
-import { UserEntity } from './UserEntity'
 
 export class GroupEntity extends Model {
   declare groupId: string
