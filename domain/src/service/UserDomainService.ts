@@ -11,7 +11,7 @@ export class UserDomainService implements UserApi {
   }
 
   async getUser(userId: string) {
-    const finded = await this.userSpi.findUser(userId)
+    const finded = await this.userSpi.findByUserId(userId)
     if (finded === null) {
       throw new Error('User not exist')
     }

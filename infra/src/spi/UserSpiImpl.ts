@@ -3,7 +3,7 @@ import { UserTransformer } from '../transformer/UserTransformer'
 import { UserEntity } from './models/UserEntity'
 
 export class UserSpiImpl implements UserSpi {
-  async findUser(userId: string) {
+  async findByUserId(userId: string) {
     const userEntity = await UserEntity.findByPk(userId)
     if (userEntity) {
       return UserTransformer().fromUserEntity(userEntity)
