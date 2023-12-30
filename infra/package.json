@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf tsconfig.tsbuildinfo && rimraf dist && rimraf coverage_unit && rimraf coverage_integration",
     "start": "node dist/src/index",
-    "dev": "ts-node src/index.ts",
+    "dev": "ts-node --project tsconfig.json src/index.ts",
     "test:unit": "jest src/__tests__/unit --coverage --coverageDirectory=coverage_unit",
     "test:integration": "jest --runInBand src/__tests__/integration --coverage --coverageDirectory=coverage_integration",
     "test": "pnpm run test:unit && pnpm run test:integration",
