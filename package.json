@@ -8,6 +8,7 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "start": "pnpm --filter infra run start",
+    "dev": "pnpm --filter infra run dev",
     "test": "pnpm -r run test"
   },
   "devDependencies": {

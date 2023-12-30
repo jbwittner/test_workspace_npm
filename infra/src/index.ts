@@ -16,8 +16,8 @@ const setupApplication = async () => {
   //Init sequelize
   await AppDataSource.initialize()
 
-  const userSpi: UserSpi = new UserSpiImpl()
-  const groupSpi: GroupSpi = new GroupSpiImpl()
+  const userSpi: UserSpi = new UserSpiImpl(AppDataSource)
+  const groupSpi: GroupSpi = new GroupSpiImpl(AppDataSource)
   const userGroupSpi: UserGroupSpi = new UserGroupSpiImpl()
   const userInfraService: UserInfraService = new UserInfraService(appLogger, userSpi)
   const groupInfraService: GroupInfraService = new GroupInfraService(appLogger, groupSpi, userSpi, userGroupSpi)
