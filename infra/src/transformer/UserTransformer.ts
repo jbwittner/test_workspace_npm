@@ -15,7 +15,7 @@ export const UserTransformer = () => {
   }
 
   const fromUserEntity = (userEntity: UserEntity): User => {
-    return new User(userEntity.userId, userEntity.userName)
+    return new User(userEntity.userName, userEntity.userId)
   }
 
   return {

@@ -9,7 +9,7 @@ describe('Test toUserDTO method', () => {
   test('Ok', () => {
     const user = infraUnitFactory.getUser()
     const userDTO = userTransformer.toUserDTO(user)
-    expect(userDTO.userId).toBe(user.getUserId())
-    expect(userDTO.userName).toBe(user.getUserName())
+    expect(userDTO.userId).toBe(user.userId)
+    expect(userDTO.userName).toBe(user.username)
   })
 })
