@@ -18,10 +18,12 @@ const setupApplication = async () => {
 
   const userSpi: UserSpi = new UserSpiImpl(AppDataSource)
   const groupSpi: GroupSpi = new GroupSpiImpl(AppDataSource)
-  const userGroupSpi: UserGroupSpi = new UserGroupSpiImpl()
+  const userGroupSpi: UserGroupSpi = new UserGroupSpiImpl(AppDataSource)
+
   const userInfraService: UserInfraService = new UserInfraService(appLogger, userSpi)
   const groupInfraService: GroupInfraService = new GroupInfraService(appLogger, groupSpi, userSpi, userGroupSpi)
-  initControllerAndInject(appLogger, userInfraService)
+
+  initControllerAndInject(appLogger, userInfraService, groupInfraService)
 
   //Start express server
   startExpressServer(APPLICATION_PORT, appLogger)
