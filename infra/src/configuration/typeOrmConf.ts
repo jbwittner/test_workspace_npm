@@ -3,6 +3,18 @@ import { UserEntity } from '../spi/models/UserEntity'
 import { GroupEntity } from '../spi/models/GroupEntity'
 import { UserGroupEntity } from '../spi/models/UserGroupEntity'
 
+export interface AppDataSourceInterface {
+  readonly host: string
+  readonly port: number;
+  readonly username: string;
+  readonly password: string;
+  readonly database: string;
+}
+
+export const getAppDataDource = () => {
+
+}
+
 export const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
