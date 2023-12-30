@@ -1,8 +1,8 @@
 import { AppLogger } from '@monorepo/domain/src'
 import { NextFunction, Request, Response } from 'express'
 import { UserInfraService } from '../service/UserInfraService'
-import { app } from '../configuration/expressConf'
 import { UserTransformer } from '../transformer/UserTransformer'
+import { app } from '../configuration/expressConf'
 
 export interface UserRequest {
   username: string

@@ -15,7 +15,7 @@ export interface GroupDTO {
 }
 
 export const GroupController = (appLogger: AppLogger, groupInfraService: GroupInfraService) => {
-  app.post('/group', (req:Request, res: Response, next: NextFunction) => {
+  app.post('/group', (req: Request, res: Response, next: NextFunction) => {
     appLogger.info('POST : /group')
     const { groupname } = req.body as GroupRequest
 
