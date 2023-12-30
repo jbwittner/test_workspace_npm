@@ -13,6 +13,7 @@ import { GroupController } from './controller/GroupController'
 export const APPLICATION_PORT = 8080
 
 const setupApplication = async () => {
+  //Init Logger
   const appLogger: AppLogger = new LoggerImpl()
 
   //Init sequelize
@@ -32,7 +33,11 @@ const setupApplication = async () => {
   GroupController(appLogger, groupInfraService)
 
   //Start express server
-  startExpressServer(APPLICATION_PORT, appLogger)
+  await startExpressServer(APPLICATION_PORT, appLogger)
+
+  return { appLogger }
 }
 
-setupApplication()
+setupApplication().then(({ appLogger }) => {
+  appLogger.info('Application started')
+})
