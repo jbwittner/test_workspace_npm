@@ -2,6 +2,7 @@ import { DataSource, DataSourceOptions } from 'typeorm'
 import { UserEntity } from '../spi/models/UserEntity'
 import { GroupEntity } from '../spi/models/GroupEntity'
 import { UserGroupEntity } from '../spi/models/UserGroupEntity'
+import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
 
 export interface AppDataSourceInterface {
   readonly host: string
@@ -11,7 +12,7 @@ export interface AppDataSourceInterface {
   readonly database: string;
 }
 
-export const AppDataSourceOptions: DataSourceOptions = {
+export const AppDataSourceOptions: MysqlConnectionOptions = {
   type: 'mysql',
   host: 'localhost',
   port: 3306,

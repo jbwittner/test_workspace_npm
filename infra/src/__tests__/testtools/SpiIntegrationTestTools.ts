@@ -7,6 +7,7 @@ import {AppDataSourceOptions} from '../../configuration/typeOrmConf'
 import { UserEntity } from '../../spi/models/UserEntity'
 import { GroupEntity } from '../../spi/models/GroupEntity'
 import { UserGroupEntity } from '../../spi/models/UserGroupEntity'
+import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions'
 
 export interface SpiApplicationTestContext {
   readonly userSpi: UserSpi
@@ -26,8 +27,13 @@ export const SpiInitInjectionAndStartServer = async (): Promise<SpiApplicationTe
   const mySqlContainer = new MySqlContainer()
   const startedContainer = await mySqlContainer.start()
 
-  const TestDataSourceOptions: DataSourceOptions = {
-    ...AppDataSourceOptions
+  const TestDataSourceOptions: MysqlConnectionOptions = {
+    ...AppDataSourceOptions,
+    host: startedContainer.getHost(),
+    port: startedContainer.getPort(),
+    username: startedContainer.getUsername(),
+    password: startedContainer.getUserPassword(),
+    database: startedContainer.getDatabase(),
   };
 
   console.log(TestDataSourceOptions)
