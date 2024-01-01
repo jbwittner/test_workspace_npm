@@ -12,7 +12,7 @@ describe('Integration SPI test wrapper', () => {
   })
 
   afterAll(async () => {
-    await testContext.sequelize.close()
+    await testContext.testAppDataSource.destroy()
     await testContext.startedContainer.stop()
   })
 

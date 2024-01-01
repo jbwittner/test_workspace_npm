@@ -9,9 +9,12 @@ export const SaveUserTest = async (testContext: SpiApplicationTestContext) => {
 
   await testContext.userSpi.save(user)
 
-  const userEntity = await UserEntity.findByPk(user.getUserId())
+  const userEntity = await testContext.repositories.userRepository.findOneBy({
+    userId: user.userId
+  })
+
 
   expect(userEntity).not.toBeNull()
-  expect(userEntity!.userId).toBe(user.getUserId())
-  expect(userEntity!.userName).toBe(user.getUserName())
+  expect(userEntity!.userId).toBe(user.userId)
+  expect(userEntity!.userName).toBe(user.username)
 }

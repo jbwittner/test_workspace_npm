@@ -1,4 +1,4 @@
-import { DataSource } from 'typeorm'
+import { DataSource, DataSourceOptions } from 'typeorm'
 import { UserEntity } from '../spi/models/UserEntity'
 import { GroupEntity } from '../spi/models/GroupEntity'
 import { UserGroupEntity } from '../spi/models/UserGroupEntity'
@@ -11,11 +11,7 @@ export interface AppDataSourceInterface {
   readonly database: string;
 }
 
-export const getAppDataDource = () => {
-
-}
-
-export const AppDataSource = new DataSource({
+export const AppDataSourceOptions: DataSourceOptions = {
   type: 'mysql',
   host: 'localhost',
   port: 3306,
@@ -28,4 +24,6 @@ export const AppDataSource = new DataSource({
   entities: [UserEntity, GroupEntity, UserGroupEntity],
   migrations: [],
   subscribers: []
-})
+} 
+
+export const AppDataSource = new DataSource(AppDataSourceOptions)

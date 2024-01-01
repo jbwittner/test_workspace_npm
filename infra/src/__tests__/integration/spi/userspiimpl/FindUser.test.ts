@@ -5,21 +5,19 @@ import { UserEntity } from '../../../../spi/models/UserEntity'
 
 export const FindUserTestOk = async (testContext: SpiApplicationTestContext) => {
   const userId = uuidv4()
-  const userEntity = await UserEntity.create({
-    userId: userId,
-    userName: faker.internet.userName()
-  })
+  const userEntity = new UserEntity(userId, faker.internet.userName())
+  testContext.repositories.userRepository.save(userEntity)
 
-  const userFinded = await testContext.userSpi.findUser(userId)
+  const userFinded = await testContext.userSpi.findByUserId(userId)
 
   expect(userFinded).not.toBeNull()
-  expect(userFinded!.getUserId()).toBe(userEntity.userId)
-  expect(userFinded!.getUserName()).toBe(userEntity.userName)
+  expect(userFinded!.userId).toBe(userEntity.userId)
+  expect(userFinded!.username).toBe(userEntity.userName)
 }
 
 export const UserNotExistTest = async (testContext: SpiApplicationTestContext) => {
   const userId = uuidv4()
-  const userFinded = await testContext.userSpi.findUser(userId)
+  const userFinded = await testContext.userSpi.findByUserId(userId)
 
   expect(userFinded).toBeNull()
 }

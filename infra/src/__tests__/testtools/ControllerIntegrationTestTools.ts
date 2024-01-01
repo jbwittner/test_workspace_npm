@@ -1,4 +1,4 @@
-import { initControllerAndInject, startExpressServer } from '../../configuration/expressConf'
+import { startExpressServer } from '../../configuration/expressConf'
 import { IncomingMessage, Server, ServerResponse } from 'http'
 import { AppLogger, User, UserApi } from '@monorepo/domain'
 import { LoggerImpl } from '../../tools/Logger'
