@@ -7,13 +7,13 @@ import { faker } from '@faker-js/faker'
 
 export const GetUserOk = async (mockUserApiFactory: MockUserApiFactory) => {
   const user = new User(faker.internet.userName(), uuidv4())
-  mockUserApiFactory.mockGetUser(user.getUserId(), user)
+  mockUserApiFactory.mockGetUser(user.userId, user)
 
-  const res = await request(app).get('/user/' + user.getUserId())
+  const res = await request(app).get('/user/' + user.userId)
 
   expect(res.status).toEqual(200)
-  expect(res.body.userName).toEqual(user.getUserName())
-  expect(res.body.userId).toEqual(user.getUserId())
+  expect(res.body.userName).toEqual(user.username)
+  expect(res.body.userId).toEqual(user.userId)
 }
 
 export const UserNotExist = async (mockUserApiFactory: MockUserApiFactory) => {

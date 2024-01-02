@@ -6,7 +6,7 @@ import { UserEntity } from '../../../../spi/models/UserEntity'
 export const FindUserTestOk = async (testContext: SpiApplicationTestContext) => {
   const userId = uuidv4()
   const userEntity = new UserEntity(userId, faker.internet.userName())
-  testContext.repositories.userRepository.save(userEntity)
+  await testContext.repositories.userRepository.save(userEntity)
 
   const userFinded = await testContext.userSpi.findByUserId(userId)
 

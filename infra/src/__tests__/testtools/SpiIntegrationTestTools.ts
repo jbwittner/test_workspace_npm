@@ -1,8 +1,7 @@
 import { MySqlContainer, StartedMySqlContainer } from '@testcontainers/mysql'
-import { AppLogger, UserApi, UserDomainService, UserSpi } from '@monorepo/domain'
-import { LoggerImpl } from '../../tools/Logger'
+import {  UserApi, UserDomainService, UserSpi } from '@monorepo/domain'
 import { UserSpiImpl } from '../../spi/UserSpiImpl'
-import { DataSource, DataSourceOptions, Repository } from 'typeorm'
+import { DataSource, Repository } from 'typeorm'
 import {AppDataSourceOptions} from '../../configuration/typeOrmConf'
 import { UserEntity } from '../../spi/models/UserEntity'
 import { GroupEntity } from '../../spi/models/GroupEntity'
@@ -35,8 +34,6 @@ export const SpiInitInjectionAndStartServer = async (): Promise<SpiApplicationTe
     password: startedContainer.getUserPassword(),
     database: startedContainer.getDatabase(),
   };
-
-  console.log(TestDataSourceOptions)
 
   const testAppDataSource = new DataSource(TestDataSourceOptions)
 

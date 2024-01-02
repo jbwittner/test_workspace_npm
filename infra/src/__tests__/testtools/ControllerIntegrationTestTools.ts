@@ -2,20 +2,20 @@ import { startExpressServer } from '../../configuration/expressConf'
 import { IncomingMessage, Server, ServerResponse } from 'http'
 import { AppLogger, User, UserApi } from '@monorepo/domain'
 import { LoggerImpl } from '../../tools/Logger'
-import { UserInfraService } from '../../service/UserInfraService'
+import { UserController } from '../../controller/UserController'
 
 export interface ControllerApplicationTestContext {
-  readonly userInfraService: UserInfraService
   readonly server: Server<typeof IncomingMessage, typeof ServerResponse>
 }
 
 export const ControllerInitInjectionAndStartServer = async (userApi: UserApi): Promise<ControllerApplicationTestContext> => {
   const appLogger: AppLogger = new LoggerImpl()
-  const userInfraService: UserInfraService = new UserInfraService(appLogger, userApi)
-  initControllerAndInject(appLogger, userInfraService)
+
+  //Init Controller
+  UserController(appLogger, userApi)
+
   const server = await startExpressServer(0, appLogger)
   return {
-    userInfraService,
     server
   }
 }
