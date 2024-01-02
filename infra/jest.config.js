@@ -6,5 +6,6 @@ module.exports = {
     "testtools",
     "spi/userspiimpl",
     "controller/usercontroller",
+    "controller/groupcontroller",
   ]
 };
