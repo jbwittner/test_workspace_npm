@@ -1,5 +1,4 @@
-import { User, UserGroup, UserGroupSpi, UserSpi } from '@monorepo/domain'
-import { UserEntity } from './models/UserEntity'
+import { UserGroup, UserGroupSpi } from '@monorepo/domain'
 import { DataSource, Repository } from 'typeorm'
 import { UserGroupEntity } from './models/UserGroupEntity'
 import { UserGroupTransformer } from '../transformer/UserGroupTransformer'

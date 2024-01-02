@@ -1,4 +1,4 @@
-import { DataSource, DataSourceOptions } from 'typeorm'
+import { DataSource } from 'typeorm'
 import { UserEntity } from '../spi/models/UserEntity'
 import { GroupEntity } from '../spi/models/GroupEntity'
 import { UserGroupEntity } from '../spi/models/UserGroupEntity'

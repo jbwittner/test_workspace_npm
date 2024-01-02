@@ -1,4 +1,4 @@
-import { Group, UserGroup } from '@monorepo/domain'
+import { UserGroup } from '@monorepo/domain'
 import { UserGroupEntity } from '../spi/models/UserGroupEntity'
 import { UserTransformer } from './UserTransformer'
 import { GroupTransformer } from './GroupTransformer'

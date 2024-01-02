@@ -2,7 +2,6 @@ import { SpiApplicationTestContext } from '../../../testtools/SpiIntegrationTest
 import { v4 as uuidv4 } from 'uuid'
 import { User } from '@monorepo/domain'
 import { faker } from '@faker-js/faker'
-import { UserEntity } from '../../../../spi/models/UserEntity'
 
 export const SaveUserTest = async (testContext: SpiApplicationTestContext) => {
   const user = new User(faker.internet.userName(), uuidv4())
