@@ -13,7 +13,6 @@ export const SaveUserTest = async (testContext: SpiApplicationTestContext) => {
     userId: user.userId
   })
 
-
   expect(userEntity).not.toBeNull()
   expect(userEntity!.userId).toBe(user.userId)
   expect(userEntity!.userName).toBe(user.username)

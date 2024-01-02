@@ -6,10 +6,10 @@ import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOpti
 
 export interface AppDataSourceInterface {
   readonly host: string
-  readonly port: number;
-  readonly username: string;
-  readonly password: string;
-  readonly database: string;
+  readonly port: number
+  readonly username: string
+  readonly password: string
+  readonly database: string
 }
 
 export const AppDataSourceOptions: MysqlConnectionOptions = {
@@ -25,6 +25,6 @@ export const AppDataSourceOptions: MysqlConnectionOptions = {
   entities: [UserEntity, GroupEntity, UserGroupEntity],
   migrations: [],
   subscribers: []
-} 
+}
 
 export const AppDataSource = new DataSource(AppDataSourceOptions)
